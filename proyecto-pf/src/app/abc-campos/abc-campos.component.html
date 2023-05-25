@@ -1,0 +1,29 @@
+<app-marco-app>
+    <div class="row col-2 mt-2">
+        <button type="button" class="btn btn-primary" (click)="editarCampo()">Agregar Campo</button>
+    </div>
+    <div class="row mt-2">
+        <table class="table table-bordered table-striped">
+            <thead>
+              <tr>
+                <th scope="col">ID</th>
+                <th scope="col">Nombre Campo</th>
+                <th scope="col">Acciones</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let campo of campos">
+                <th scope="row">{{campo.idCampo}}</th>
+                <td>{{campo.nombre}}</td>
+                <td>
+                    <div class="btn-group btn-group-md accion">
+                        <button class="btn btn-primary" (click)="editarCampo(campo)">Editar</button>
+                        <button class="btn btn-danger" (click)="eliminarCampo(campo)">Eliminar</button>
+                    </div>
+                </td>
+              </tr>
+            </tbody>
+          </table>    
+    </div>
+</app-marco-app>
+
