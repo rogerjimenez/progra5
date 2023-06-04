@@ -1,4 +1,39 @@
 <app-marco-app>
-    <p>abc-partidos works!</p>
+    <div class="row col-2 mt-2">
+        <button type="button" class="btn btn-primary" (click)="editarPartido()">Agregar Partido</button>
+    </div>
+    <div class="row mt-2">
+        <table class="table table-bordered table-striped">
+            <thead>
+                <tr>
+                <th scope="col">ID</th>
+                <th scope="col">Nombre</th>
+                <th scope="col">Acronimo</th>
+                <th scope="col">Eslogan</th>
+                <th scope="col">Representante Legal</th>
+                <th scope="col">Secretario</th>
+                <th scope="col">Fecha de Constitucion</th>
+                <th scope="col">Acciones</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let partido of partidos">
+                <th scope="row">{{partido.idPartido}}</th>
+                <td>{{partido.nombre}}</td>
+                <td>{{partido.acronimo}}</td>
+                <td>{{partido.eslogan}}</td>
+                <td>{{partido.representanteLegal}}</td>
+                <td>{{partido.secretarioGeneral}}</td>
+                <td>{{partido.fechaConstitucion}}</td>
+                <td>
+                    <div class="btn-group btn-group-md accion">
+                        <button class="btn btn-primary" (click)="editarPartido(partido)">Editar</button>
+                        <button class="btn btn-danger" (click)="eliminarPartido(partido)">Eliminar</button>
+                    </div>
+                </td>
+                </tr>
+            </tbody>
+            </table>    
+    </div>
 </app-marco-app>
 

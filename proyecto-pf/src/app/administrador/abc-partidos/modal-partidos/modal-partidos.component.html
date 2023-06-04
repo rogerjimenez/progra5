@@ -1,0 +1,40 @@
+<div class="modal-header">
+    <h4 class="modal-title pull-left">{{accion}} Partido</h4>
+  </div>
+  <div class="modal-body">
+    <form [formGroup]="partidoForm">
+        <div class="mb-3">
+            <label for="idPartido" class="form-label">Id Partido</label>
+            <input type="number" formControlName="idPartido" class="form-control">
+          </div>
+          <div class="mb-3">
+            <label class="form-label">Nombre</label>
+            <input type="text" formControlName="nombre" class="form-control">
+          </div>
+          <div class="mb-3">
+            <label class="form-label">Acronimo</label>
+            <input type="text" formControlName="acronimo" class="form-control">
+          </div>
+          <div class="mb-3">
+            <label class="form-label">Eslogan</label>
+            <input type="text" formControlName="eslogan" class="form-control">
+          </div>
+          <div class="mb-3">
+            <label class="form-label">Representante Legal</label>
+            <input type="text" formControlName="representanteLegal" class="form-control">
+          </div>
+          <div class="mb-3">
+            <label class="form-label">Secretario General</label>
+            <input type="text" formControlName="secretarioGeneral" class="form-control">
+          </div>
+          <div class="mb-3">
+            <label class="form-label">Fecha Constitucion</label>
+            <input type="text" formControlName="fechaConstitucion" class="form-control">
+          </div>
+    </form>
+
+  </div>
+  <div class="modal-footer">
+        <button type="button" class="btn btn-default" (click)="cancelar()">Cancelar</button>
+        <button type="button" class="btn btn-primary" (click)="guardarPartido()">{{accion}}</button>
+  </div>

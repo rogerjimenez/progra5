@@ -40,8 +40,6 @@ export class LoginComponent implements OnInit {
         this.logueServicio.verificarUsuario(credenciales)
             .subscribe(usuario => {
                 if (usuario && usuario.autenticado) {
-console.log(usuario);
-
                     this.router.navigate(['/'+usuario.nombreRol.toLocaleLowerCase()+'/home']);
                 } else {
                     this.router.navigate(['/login']);

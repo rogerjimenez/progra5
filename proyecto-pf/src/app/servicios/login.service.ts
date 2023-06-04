@@ -16,7 +16,7 @@ export class LoginService {
     public verificarUsuario(credenciales: LoginUsuario): Observable<Usuario> {
         //Aca iria el consumo del servicio
         //Este deberia devolver un objeto como el que se retorna en el ejemplo
-        return this.http.post<Usuario>('api/Usuario/VarificarUsuario', credenciales)
+        return this.http.post<Usuario>('/api/Usuario/VarificarUsuario', credenciales)
             .pipe(
                 concatMap(usuario => {
                     this.usuarioLogueado = usuario;
