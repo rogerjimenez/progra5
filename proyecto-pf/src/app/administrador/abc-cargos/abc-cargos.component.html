@@ -1,0 +1,29 @@
+<app-marco-app>
+    <div class="row col-2 mt-2">
+        <button type="button" class="btn btn-primary" (click)="editarCargo()">Agregar Cargo</button>
+    </div>
+    <div class="row mt-2">
+        <table class="table table-bordered table-striped">
+            <thead>
+                <tr>
+                <th scope="col">ID</th>
+                <th scope="col">Nombre</th>
+                <th scope="col">Acciones</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let cargo of cargos">
+                <th scope="row">{{cargo.idCargo}}</th>
+                <td>{{cargo.nombre}}</td>
+                <td>
+                    <div class="btn-group btn-group-md accion">
+                        <button class="btn btn-primary" (click)="editarCargo(cargo)">Editar</button>
+                        <button class="btn btn-danger" (click)="eliminarCargo(cargo)">Eliminar</button>
+                    </div>
+                </td>
+                </tr>
+            </tbody>
+            </table>    
+    </div>
+</app-marco-app>
+

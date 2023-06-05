@@ -12,7 +12,7 @@ import { AdministradorServiciosService } from '../../administrador-servicios.ser
 })
 export class ModalPartidosComponent implements OnInit {
 
-  public accion: string = ''
+    public accion: string = ''
     public esActualizacion: boolean = false;
     public partido!: Partido;
     public partidoForm: FormGroup;

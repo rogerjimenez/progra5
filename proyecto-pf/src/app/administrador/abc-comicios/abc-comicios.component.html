@@ -1,3 +1,37 @@
 <app-marco-app>
-    <p>abc-comicios works!</p>
+    <div class="row col-2 mt-2">
+        <button type="button" class="btn btn-primary" (click)="editarComicio()">Agregar Eleccion</button>
+    </div>
+    <div class="row mt-2">
+        <table class="table table-bordered table-striped">
+            <thead>
+                <tr>
+                <th scope="col">ID</th>
+                <th scope="col">Ejercicio</th>
+                <th scope="col">Fecha Inicio</th>
+                <th scope="col">Fecha Fin</th>
+                <th scope="col">Codigo</th>
+                <th scope="col">Estado</th>
+                <th scope="col">Acciones</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let comicio of comicios">
+                <th scope="row">{{comicio.idEleccion}}</th>
+                <td>{{comicio.ejercicio}}</td>
+                <td>{{comicio.fechaInicio}}</td>
+                <td>{{comicio.fechaFin}}</td>
+                <td>{{comicio.codigo}}</td>
+                <td>{{comicio.estado}}</td>
+                <td>
+                    <div class="btn-group btn-group-md accion">
+                        <button class="btn btn-primary" (click)="editarComicio(comicio)">Editar</button>
+                        <button class="btn btn-danger" (click)="eliminarComicio(comicio)">Eliminar</button>
+                    </div>
+                </td>
+                </tr>
+            </tbody>
+            </table>    
+    </div>
 </app-marco-app>
+

@@ -1,0 +1,36 @@
+<div class="modal-header">
+    <h4 class="modal-title pull-left">{{accion}} Eleccion</h4>
+  </div>
+  <div class="modal-body">
+    <form [formGroup]="comicioForm">
+        <div class="mb-3">
+            <label for="idPartido" class="form-label">Id Eleccion</label>
+            <input type="number" formControlName="idEleccion" class="form-control">
+          </div>
+          <div class="mb-3">
+            <label class="form-label">Ejercicio</label>
+            <input type="text" formControlName="ejercicio" class="form-control">
+          </div>
+          <div class="mb-3">
+            <label class="form-label">Fecha Inicio</label>
+            <input type="text" formControlName="fechaInicio" class="form-control">
+          </div>
+          <div class="mb-3">
+            <label class="form-label">Fecha Fin</label>
+            <input type="text" formControlName="fechaFin" class="form-control">
+          </div>
+          <div class="mb-3">
+            <label class="form-label">Codigo</label>
+            <input type="text" formControlName="codigo" class="form-control">
+          </div>
+          <div class="mb-3">
+            <label class="form-label">Estado</label>
+            <input type="text" formControlName="estado" class="form-control">
+          </div>
+    </form>
+
+  </div>
+  <div class="modal-footer">
+        <button type="button" class="btn btn-default" (click)="cancelar()">Cancelar</button>
+        <button type="button" class="btn btn-primary" (click)="guardarComicio()">{{accion}}</button>
+  </div>

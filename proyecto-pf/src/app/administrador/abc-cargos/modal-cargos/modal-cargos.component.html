@@ -1,0 +1,20 @@
+<div class="modal-header">
+    <h4 class="modal-title pull-left">{{accion}} Cargo</h4>
+  </div>
+  <div class="modal-body">
+    <form [formGroup]="cargoForm">
+        <div class="mb-3">
+            <label for="idCargo" class="form-label">Id Cargo</label>
+            <input type="number" formControlName="idCargo" class="form-control">
+          </div>
+          <div class="mb-3">
+            <label class="form-label">Nombre</label>
+            <input type="text" formControlName="nombre" class="form-control">
+          </div>
+    </form>
+
+  </div>
+  <div class="modal-footer">
+        <button type="button" class="btn btn-default" (click)="cancelar()">Cancelar</button>
+        <button type="button" class="btn btn-primary" (click)="guardarCargo()">{{accion}}</button>
+  </div>

@@ -13,7 +13,7 @@ import { CamposService } from 'src/app/servicios/campos.service';
 })
 export class AbcPartidosComponent implements OnInit {
 
-  modalRef?: BsModalRef;
+    modalRef?: BsModalRef;
     public accion: string = 'Agregar'
     public campoForm: FormGroup;
     public partidos: Partido[] = [];
