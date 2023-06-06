@@ -19,7 +19,7 @@ export class ModalComiciosComponent implements OnInit {
     private campoModificadoSubject: ReplaySubject<Comicio> = new ReplaySubject();
     public campoModificado$ = this.campoModificadoSubject.asObservable();
 
-    constructor(private bsModalRef: BsModalRef, private fb: FormBuilder, private adminServicios: AdministradorServiciosService) { 
+    constructor(private bsModalRef: BsModalRef, private fb: FormBuilder, private administradorService: AdministradorServiciosService) { 
         this.comicioForm = new FormGroup({})
     }
 
@@ -61,12 +61,14 @@ export class ModalComiciosComponent implements OnInit {
         this.comicio.estado = this.estado?.value;
         
         if(this.esActualizacion) {
-            this.adminServicios.editarComicio(this.comicio).subscribe(data => {
+            this.administradorService.editarComicio(this.comicio).subscribe(data => {
                 this.campoModificadoSubject.next(this.comicio);
+                
             });
         } else {
-            this.adminServicios.GuardarComicio(this.comicio).subscribe(data => {
+            this.administradorService.GuardarComicio(this.comicio).subscribe(data => {
                 this.campoModificadoSubject.next(this.comicio);
+                
             });
         }
         

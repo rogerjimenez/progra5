@@ -10,14 +10,17 @@
           <div class="mb-3">
             <label class="form-label">Ejercicio</label>
             <input type="text" formControlName="ejercicio" class="form-control">
+            
           </div>
           <div class="mb-3">
             <label class="form-label">Fecha Inicio</label>
-            <input type="text" formControlName="fechaInicio" class="form-control">
+            <input type="text" placeholder="" formControlName="fechaInicio" class="form-control" bsDatepicker placement="bottom" [bsConfig]="{ dateInputFormat: 'DD/MM/YYYY', containerClass: 'theme-red' }"
+            />
           </div>
           <div class="mb-3">
             <label class="form-label">Fecha Fin</label>
-            <input type="text" formControlName="fechaFin" class="form-control">
+            <input type="text" placeholder="" formControlName="fechaFin" class="form-control" bsDatepicker placement="bottom" [bsConfig]="{ dateInputFormat: 'DD/MM/YYYY', containerClass: 'theme-red' }"
+            />
           </div>
           <div class="mb-3">
             <label class="form-label">Codigo</label>

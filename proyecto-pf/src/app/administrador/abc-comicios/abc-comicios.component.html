@@ -19,8 +19,8 @@
                 <tr *ngFor="let comicio of comicios">
                 <th scope="row">{{comicio.idEleccion}}</th>
                 <td>{{comicio.ejercicio}}</td>
-                <td>{{comicio.fechaInicio}}</td>
-                <td>{{comicio.fechaFin}}</td>
+                <td>{{comicio.fechaInicio | date:'dd/MM/yyyy'}}</td>
+                <td>{{comicio.fechaFin | date:'dd/MM/yyyy'}}</td>
                 <td>{{comicio.codigo}}</td>
                 <td>{{comicio.estado}}</td>
                 <td>

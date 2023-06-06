@@ -46,6 +46,10 @@ export class AbcPartidosComponent implements OnInit {
                     partidoEditado = data;
                 } else {
                     this.partidos.push(data);
+                    this.administradorService.ObtenerPartidos()
+                    .subscribe(data => {
+                        this.partidos = data.splice(0, 10);
+                    });
                 }
             })
     }

@@ -45,6 +45,10 @@ export class AbcComiciosComponent implements OnInit {
                     comicioEditado = data;
                 } else {
                     this.comicios.push(data);
+                    this.administradorService.ObtenerComicios()
+                    .subscribe(data => {
+                        this.comicios = data.splice(0, 10);
+                    });
                 }
             })
     }

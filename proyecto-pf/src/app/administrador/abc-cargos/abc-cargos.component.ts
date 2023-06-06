@@ -45,6 +45,10 @@ export class AbcCargosComponent implements OnInit {
                     partidoEditado = data;
                 } else {
                     this.cargos.push(data);
+                    this.administradorService.ObtenerCargos()
+                    .subscribe(data => {
+                        this.cargos = data.splice(0, 10);
+                    });
                 }
             })
     }

@@ -57,9 +57,7 @@ export class ModalCargosComponent implements OnInit {
                 this.campoModificadoSubject.next(this.cargo);
             });
         }
-        
         this.cancelar();
-
     }
 
 
