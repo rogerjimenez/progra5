@@ -1,0 +1,39 @@
+<app-marco-app>
+    <div class="row col-2 mt-2">
+        <button type="button" class="btn btn-primary" (click)="editarCandidato()">Agregar Candidato</button>
+    </div>
+    <div class="row mt-2">
+        <table class="table table-bordered table-striped">
+            <thead>
+                <tr>
+                <th scope="col">ID</th>
+                <th scope="col">Cargo</th>
+                <th scope="col">Partido</th>
+                <th scope="col">Nombre</th>
+                <th scope="col">Edad</th>
+                <th scope="col">Eleccion</th>
+                <th scope="col">Codigo</th>
+                <th scope="col">Acciones</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let candidato of candidatos">
+                <th scope="row">{{candidato.idCandidato}}</th>
+                <th scope="row">{{candidato.idCargoPublico}}</th>
+                <th scope="row">{{candidato.idPartido}}</th>
+                <td>{{candidato.nombre}}</td>
+                <td>{{candidato.edad}}</td>
+                <th scope="row">{{candidato.idEleccion}}</th>
+                <td>{{candidato.codigo}}</td>
+                <td>
+                    <div class="btn-group btn-group-md accion">
+                        <button class="btn btn-primary" (click)="editarCandidato(candidato)">Editar</button>
+                        <button class="btn btn-danger" (click)="eliminarCandidato(candidato)">Eliminar</button>
+                    </div>
+                </td>
+                </tr>
+            </tbody>
+            </table>    
+    </div>
+</app-marco-app>
+

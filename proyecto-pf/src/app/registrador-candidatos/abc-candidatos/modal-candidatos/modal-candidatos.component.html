@@ -1,0 +1,49 @@
+<div class="modal-header">
+    <h4 class="modal-title pull-left">{{accion}} Cargo</h4>
+  </div>
+  <div class="modal-body">
+    <form [formGroup]="candidatoForm">
+        <div class="mb-3">
+            <label for="idCandidato" class="form-label">Id Candidato</label>
+            <input type="number" formControlName="idCandidato" class="form-control">
+          </div>
+          <div>
+            <label for="idCargoPublico" class="form-label">Cargo</label>
+            <select class="form-control selectpicker" formControlName="idCargoPublico">
+              <option value="" selected disabled hidden>-- Seleccione un Cargo --</option>
+              <option *ngFor = "let cargo of cargos" [value]="cargo.idCargo">{{ cargo.nombre }}</option>
+            </select>
+          </div>
+          <div>
+            <label for="idPartido" class="form-label">Partido</label>
+            <select class="form-control selectpicker" formControlName="idPartido">
+              <option value="" selected disabled hidden>-- Seleccione un Partido --</option>
+              <option *ngFor = "let partido of partidos" [value]="partido.idPartido">{{ partido.nombre }}</option>
+            </select>
+          </div>
+          <div class="mb-3">
+            <label class="form-label">Nombre</label>
+            <input type="text" formControlName="nombre" class="form-control">
+          </div>
+          <div class="mb-3">
+            <label class="form-label">Edad</label>
+            <input type="number" formControlName="edad" class="form-control">
+          </div>
+          <div>
+            <label for="idEleccion" class="form-label">Eleccion</label>
+            <select class="form-control selectpicker" formControlName="idEleccion">
+              <option value="" selected disabled hidden>-- Seleccione una eleccion --</option>
+              <option *ngFor = "let comicio of comicios" [value]="comicio.idEleccion">{{ comicio.ejercicio }}</option>
+            </select>
+          </div>
+          <div class="mb-3">
+            <label class="form-label">Codigo</label>
+            <input type="text" formControlName="codigo" class="form-control">
+          </div>
+    </form>
+
+  </div>
+  <div class="modal-footer">
+        <button type="button" class="btn btn-default" (click)="cancelar()">Cancelar</button>
+        <button type="button" class="btn btn-primary" (click)="guardarCandidato()">{{accion}}</button>
+  </div>
